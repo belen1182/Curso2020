@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <record id="view_helpdesk_stage_tree" model="ir.ui.view">
+      <field name="name">view.helpdesk_stage.tree</field>
+      <field name="model">helpdesk.stage</field>
+      <field name="arch" type="xml">
+          <tree string="Stages">
+              <field name="stage"/>
+          </tree>
+      </field>
+  </record>
+
+  <record id="view_helpdesk_stage_form" model="ir.ui.view">
+      <field name="name">view.helpdesk_stage.form</field>
+      <field name="model">helpdesk.stage</field>
+      <field name="arch" type="xml">
+        <form string="Stage">
+          <sheet>
+            <group name="main">
+                <field name="stage" optional="show"/>
+            </group>
+
+          </sheet>
+        </form>
+      </field>
+  </record>
+
+  <record id="helpdesk_stage_action" model="ir.actions.act_window">
+      <field name="name">HelpDesk Stage</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">helpdesk.stage</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

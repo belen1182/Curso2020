@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+user_displacement_travel,user_displacement_travel,model_displacement_travel,displacement.group_user_displacement,1,0,0,0

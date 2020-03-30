@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+  <menuitem name="Displacement" id="displacement_menu_root"
+    string="Displacement" sequence="30"/>
+
+  <menuitem name="Travels" id="travel_main_menu"
+    string="Travels" parent="displacement_menu_root"  sequence="30"/>
+
+    <menuitem id="travel_hd_menu" name="Travels"
+      parent="travel_main_menu"
+      action="displacement.displacement_travel_action" sequence="20"
+      groups="base.group_user"/>
+</odoo>

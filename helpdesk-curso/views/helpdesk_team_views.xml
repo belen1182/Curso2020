@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+      <record id="view_helpdesk_team_tree" model="ir.ui.view">
+          <field name="name">view.helpdesk_team.tree</field>
+          <field name="model">helpdesk.team</field>
+          <field name="arch" type="xml">
+              <tree string="Teams">
+                  <field name="name"/>
+                  <field name="ticket_ids"/>
+              </tree>
+          </field>
+      </record>
+
+      <record id="view_helpdesk_team_form" model="ir.ui.view">
+          <field name="name">view.helpdesk_team.form</field>
+          <field name="model">helpdesk.team</field>
+          <field name="arch" type="xml">
+            <form string="Team">
+              <sheet>
+                <group name="main">
+                  <group name="name">
+                    <field name="name"/>
+                  </group>
+                  <group name="ticket_ids">
+                    <field name="ticket_ids" optional="show"/>
+                  </group>
+                </group>
+              </sheet>
+            </form>
+          </field>
+      </record>
+
+      <record id="helpdesk_team_action" model="ir.actions.act_window">
+        <field name="name">Team</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">helpdesk.team</field>
+        <field name="view_mode">tree,form</field>
+      </record>
+
+
+
+</odoo>

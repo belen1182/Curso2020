@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="ticket_project_view_form" model="ir.ui.view">
+      <field name="name">ticket_project.view.form</field>
+      <field name="model">helpdesk.ticket</field>
+      <field name="inherit_id" ref="helpdesk_mgmt.ticket_view_form"/>
+      <field name="arch" type="xml">
+        <notebook position="inside">
+          <page name="project" string="Project">
+            <group>
+              <field name="project_id"/>
+              <field name="task_id"/>
+            </group>
+          </page>
+        </notebook>
+      </field>
+    </record>
+
+    <record id="ticket_project_view_search" model="ir.ui.view">
+    <field name="name">ticket_project.view.search</field>
+    <field name="model">helpdesk.ticket</field>
+    <field name="inherit_id" ref="helpdesk_mgmt.helpdesk_ticket_view_search"/>
+    <field name="arch" type="xml">
+        <search>
+            <field name="project_id"/>
+            <field name="task_id"/>
+            <group string="Group By" name="groupby">
+              <filter name="project_groupby" string="Project" context="{'group_by':'project_id'}"/>
+              <filter name="task_groupby" string="Task" context="{'group_by':'task_id'}"/>
+            </group>
+        </search>
+    </field>
+  </record>
+
+  </data>
+</odoo>

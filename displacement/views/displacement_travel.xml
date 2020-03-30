@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="displacement_travel_view_tree" model="ir.ui.view">
+      <field name="name">displacement.travel.view.tree</field>
+      <field name="model">displacement.travel</field>
+      <field name="priority">2</field>
+      <field name="arch" type="xml">
+        <tree string="Travels">
+          <field name="name"/>
+          <field name="description"/>
+          <field name="date_start"/>
+          <field name="date_end"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="displacement_travel_view_form" model="ir.ui.view">
+      <field name="name">displacement.travel.view.form</field>
+      <field name="model">displacement.travel</field>
+      <field name="priority">2</field>
+      <field name="arch" type="xml">
+          <form string="Travels">
+            <sheet>
+              <group name="main">
+                <group name="name">
+                  <field name="name"/>
+                </group>
+                <group name="date">
+                  <field name="date_start"/>
+                  <field name="date_end"/>
+                </group>
+                <group name="description">
+                  <field name="description"/>
+                </group>
+              </group>
+            </sheet>
+          </form>
+      </field>
+    </record>
+
+    <record id="displacement_travel_view_search" model="ir.ui.view">
+      <field name="name">displacement.travel.view.search</field>
+      <field name="model">displacement.travel</field>
+      <field name="arch" type="xml">
+          <search string="Travels">
+              <field name="name"/>
+              <field name="description"/>
+              <field name="date_start"/>
+              <field name="date_end"/>
+              <group string="Group By Start" name="groupbydatestart">
+                <filter name="date_start_groupby" string="Date Start" context="{'group_by':'date_start'}"/>
+              </group>
+              <group string="Group By End" name="groupbydateend">
+                <filter name="date_end_groupby" string="Date End" context="{'group_by':'date_end'}"/>
+              </group>
+          </search>
+      </field>
+    </record>
+
+    <record id="displacement_travel_action" model="ir.actions.act_window">
+       <field name="name">Travels</field>
+       <field name="type">ir.actions.act_window</field>
+       <field name="res_model">displacement.travel</field>
+       <field name="view_mode">tree,form,search</field>
+    </record>
+
+</odoo>
